@@ -24,3 +24,4 @@ services:
       - ${ETH_REST_URL}
       - -eth1
       - ${ETH_RPC_URL}
+      - -server
