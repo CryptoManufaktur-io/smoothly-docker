@@ -16,8 +16,11 @@ services:
     ports:
       - 5040:5040/tcp
     <<: *logging
-    command:
+    entrypoint:
       - docker-entrypoint.sh
+      - node
+      - --experimental-specifier-resolution=node
+      - ./dist/index.js
       - smoothly_cli
       - -pk
       - ${ETH_PRIVATE_KEY}
